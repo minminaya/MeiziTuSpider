@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!-- <servlet>
+       <servlet-name>JAX-RS Servlet</servlet-name>
+       <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+       <init-param>
+           <param-name>jersey.config.server.provider.packages</param-name>
+           <param-value>com.test</param-value>
+       </init-param>
+       <load-on-startup>1</load-on-startup>
+   </servlet>
+   <servlet-mapping>
+       <servlet-name>JAX-RS Servlet</servlet-name>
+       <url-pattern>/test/*</url-pattern>
+   </servlet-mapping>-->
+
+    <!--json application需要的入口-->
+    <servlet>
+        <servlet-name>Way REST Service</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>com.minminaya.RestApplication</param-value>
+        </init-param>
+
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Way REST Service</servlet-name>
+        <!--这里决定了访问的链接入口，比如这里是api，那么http://localhost:8080/api/hello是访问链接-->
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
