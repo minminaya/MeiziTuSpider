@@ -33,6 +33,7 @@ public class PineLineMeizi implements Pipeline {
     private int webIndex = 1;
 
     /**
+     * 爬虫数据处理主类
      * 表meiziwebone中的picStartId
      * 某网页图片地址在picInfos中起始位置
      */

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ·
+ * 数据处理测试类，可抛弃
  * Created by Niwa on 2017/6/30.
  */
 public class PileLineTest11 implements Pipeline {
@@ -55,7 +55,7 @@ public class PileLineTest11 implements Pipeline {
         System.out.println("大集合值为" + meiTuModels.get(2).getPicInfos().get(3).getPicUrl());
         System.out.println("大集合值title值为" + meiTuModels.get(2).getWebTitle());
 
-        if(downLoadPosition == 10){
+        if (downLoadPosition == 10) {
             System.out.println("到达10次");
         }
 
