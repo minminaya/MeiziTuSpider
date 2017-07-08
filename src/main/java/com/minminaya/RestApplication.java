@@ -3,7 +3,7 @@ package com.minminaya;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import org.glassfish.jersey.server.ResourceConfig;
 
-/**
+/** 用于支持对象转json服务
  * Created by Niwa on 2017/6/16.
  */
 public class RestApplication extends ResourceConfig {
