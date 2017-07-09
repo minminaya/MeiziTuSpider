@@ -2,6 +2,7 @@ package com.minminaya;
 
 import com.minminaya.model.MeiTuModel;
 import com.minminaya.model.User;
+import com.minminaya.utils.RefreshDataBase;
 import com.minminaya.utils.SqlUtilForReBuild;
 import com.minminaya.utils.SqlUtilForSelectData;
 import us.codecraft.webmagic.Spider;
@@ -90,16 +91,17 @@ public class HelloJsersy {
     public String refreshDatabase() {
         long time1 = System.currentTimeMillis();
 
-        SqlUtilForReBuild.rebuild();
+//        SqlUtilForReBuild.rebuild();
+//
+//        Spider.create(new MeituRepoProcessor())
+//                .addUrl("http://www.meizitu.com/")
+////                .addPipeline(new ConsolePipeline())
+//                .addPipeline(new PineLineMeizi())
+////                .addPipeline(new PileLineTest11())
+//                .thread(1)
+//                .run();
 
-        Spider.create(new MeituRepoProcessor())
-                .addUrl("http://www.meizitu.com/")
-//                .addPipeline(new ConsolePipeline())
-                .addPipeline(new PineLineMeizi())
-//                .addPipeline(new PileLineTest11())
-                .thread(1)
-                .run();
-
+        RefreshDataBase.refresh();
 
         long time2 = System.currentTimeMillis();
 

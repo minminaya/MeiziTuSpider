@@ -36,4 +36,8 @@
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 
+    <!--NFDFlightDataTaskListener 监听器-->
+    <listener>
+        <listener-class>com.minminaya.utils.time.NFDFlightDataTaskListener</listener-class>
+    </listener>
 </web-app>
