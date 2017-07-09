@@ -122,4 +122,23 @@ public class SqlUtilForSpider {
         System.out.println("数据-----" + "id:" + id + "," + "picUrl:" + picUrl + "插入完成");
 
     }
+
+    /**
+     * 执行SQL语句
+     */
+    public static void executeSQL(String sql) {
+        Connection connection = getConn();
+        PreparedStatement preparedStatement = null;
+//        String sql = "DROP TABLE IF EXISTS `meiziwebone`;";
+        try {
+            preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+            preparedStatement.executeUpdate();
+            connection.close();
+            System.out.println("数据库连接已关闭");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

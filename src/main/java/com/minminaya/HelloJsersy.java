@@ -2,6 +2,7 @@ package com.minminaya;
 
 import com.minminaya.model.MeiTuModel;
 import com.minminaya.model.User;
+import com.minminaya.utils.SqlUtilForReBuild;
 import com.minminaya.utils.SqlUtilForSelectData;
 import us.codecraft.webmagic.Spider;
 
@@ -88,6 +89,9 @@ public class HelloJsersy {
     @Produces("application/json;charset=utf8")
     public String refreshDatabase() {
         long time1 = System.currentTimeMillis();
+
+        SqlUtilForReBuild.rebuild();
+
         Spider.create(new MeituRepoProcessor())
                 .addUrl("http://www.meizitu.com/")
 //                .addPipeline(new ConsolePipeline())
